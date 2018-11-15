@@ -1,1 +1,1 @@
-# openrest + confd
+# openresty + confd
