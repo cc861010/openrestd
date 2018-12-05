@@ -16,3 +16,8 @@ RUN apk add --no-cache \
 FROM openresty/openresty:1.13.6.2-2-alpine
 
 COPY --from=confd /go/bin/confd /usr/local/bin/confd
+
+RUN apk update \
+    && apk add tzdata \
+    && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" > /etc/timezone
